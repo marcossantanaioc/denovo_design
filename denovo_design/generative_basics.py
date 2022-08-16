@@ -9,9 +9,11 @@ from fastinference.inference import *
 
 # %% ../notebooks/generative_basics.ipynb 4
 class MolSampler():
+    
     """
     Base class for molecule generation
     """
+    
     def __init__(self,model_fname:str,text:str='',cpu:bool=False):      
         
         self.model = load_learner(model_fname, cpu=cpu)
