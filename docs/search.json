@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "tokenizer.html",
+    "href": "tokenizer.html",
+    "title": "denovo_design",
+    "section": "",
+    "text": "MolTokenizer\n\n MolTokenizer ()\n\nConverts SMILES into tokenized versions to train a language model."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "denovo_design",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation."
+  },
+  {
+    "objectID": "generative_basics.html",
+    "href": "generative_basics.html",
+    "title": "denovo_design",
+    "section": "",
+    "text": "MolSampler\n\n MolSampler (model_fname:str, text:str='', cpu:bool=False)\n\nBase class for molecule generation\n\n\nMolSampler.base_sampler\n\n MolSampler.base_sampler (max_size:int=100, temperature:float=1.0,\n                          **kwargs)\n\nBase sampler to generate one SMILES using a chemistry model trained with fastai\n\n\n\nMolSampler.generate_mols\n\n MolSampler.generate_mols (max_size, max_mols, temperature, **kwargs)\n\nGenerate molecules using a base sampler"
+  },
+  {
+    "objectID": "MoleculeGenerator.html",
+    "href": "MoleculeGenerator.html",
+    "title": "denovo_design",
+    "section": "",
+    "text": "MolGenerator\n\n MolGenerator (model_fname, text='', cpu=False, **kwargs)\n\nMolecule generator based on ULMFIT. Given a trained molecule model (e.g. LSTM), generates molecules starting from a seed text.\n\n\nMolGenerator.generate_mols\n\n MolGenerator.generate_mols (max_size=100, max_mols=5, temperature=1.0)\n\nGenerate molecules using a base sampler"
+  },
+  {
+    "objectID": "GenerativeCallback.html",
+    "href": "GenerativeCallback.html",
+    "title": "denovo_design",
+    "section": "",
+    "text": "MockGenerator\n\n MockGenerator (molecules)\n\nMock generator that returns pre-defined molecules,\n\n\n\nGenerativeCallback\n\n GenerativeCallback (reference_mols:List=[], text:str='',\n                     max_size:int=100, temperature:float=0.7,\n                     max_mols:int=100)\n\nA callback to generate molecules while training a model."
+  },
+  {
+    "objectID": "chem.html",
+    "href": "chem.html",
+    "title": "denovo_design",
+    "section": "",
+    "text": "is_valid\n\n is_valid (smiles)\n\nCheck if a given SMILES is a valid structure\n\n\n\nrandomize_smiles\n\n randomize_smiles (smiles)\n\nRandomize a SMILES string\n\n\n\nsmiles_augmentation\n\n smiles_augmentation (df=None, smiles_column='processed_smiles',\n                      N_rounds=2)\n\nRandomize SMILES in a pandas.DataFrame column"
+  }
+]
