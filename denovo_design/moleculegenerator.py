@@ -14,6 +14,8 @@ from time import sleep
 
 from .chem import is_valid
 
+import multiprocessing as mp
+
 # %% ../notebooks/MoleculeGenerator.ipynb 4
 class MolGenerator(MolSampler):
     """Molecule generator based on ULMFIT. Given a trained molecule model (e.g. LSTM), generates molecules starting from a seed text. 
@@ -49,16 +51,15 @@ class MolGenerator(MolSampler):
         """Generate molecules using a base sampler"""
 
         generated_mols = set()
-        
-        
-        while len(generated_mols) < max_mols:
-            
-            
-            mol = is_valid(self.base_sampler(max_size=max_size, temperature=temperature))
-            
-            if mol != None:
-                generated_mols.add(mol)
-                print(f'{len(generated_mols)}/{max_mols}',end='\r')
+        with mp.Pool() as mp_pool: 
+            while len(generated_mols) < max_mols:
+
+
+                mol = is_valid(self.base_sampler(max_size=max_size, temperature=temperature))
+
+                if mol != None:
+                    generated_mols.add(mol)
+                    print(f'{len(generated_mols)}/{max_mols}',end='\r')
  
         return tuple(generated_mols)
     

@@ -12,10 +12,14 @@ def is_valid(smiles):
     
     """ Check if a given SMILES is a valid structure """
     
-    if isinstance(smiles, str): 
-        mol = MolFromSmiles(smiles)
+    if isinstance(smiles, str):
+        try:
+            mol = MolFromSmiles(smiles)
+        except:
+            return None
         if mol is not None and mol.GetNumAtoms()>0:
             return MolToSmiles(mol)
+        return None
         
         
 def randomize_smiles(smiles):

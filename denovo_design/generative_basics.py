@@ -44,7 +44,7 @@ class MolSampler():
         act = getattr(self.model.loss_func, 'activation', noop)
         self.model.model.reset()    # Reset the model
         stop_index = self.model.dls.train.vocab.index(BOS)        # Define the stop token
-        idxs = self.model.dls.test_dl([self.text]).items[0].to(x.model.dls.device)
+        idxs = self.model.dls.test_dl([self.text]).items[0].to(self.model.dls.device)
         nums = self.model.dls.train_ds.numericalize     # Numericalize (used to decode)
         accum_idxs = []                   # Store predicted tokens
         self.model.model.eval()
