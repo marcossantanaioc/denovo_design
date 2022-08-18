@@ -95,7 +95,6 @@ class GenerativeCallback(Callback):
         self.max_mols = max_mols
         self.smiles = []
         self.valid_mols = []
-        # self.logger = SMILESLogger(output_file)
         self.epoch_track = 0
         self.output_file = output_file
         
